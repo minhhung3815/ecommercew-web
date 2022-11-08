@@ -211,8 +211,8 @@ export const deleteProduct = (id) => async (dispatch) => {
 export const getAllReviews = (id) => async (dispatch) => {
     try {
         dispatch({ type: ALL_REVIEWS_REQUEST });
-        const { data } = await axios.get(`/api/v1/admin/reviews?id=${id}`);
-
+        const { data } = await axios.get(`/api/v1/admin/reviews`);
+        
         dispatch({
             type: ALL_REVIEWS_SUCCESS,
             payload: data.reviews,

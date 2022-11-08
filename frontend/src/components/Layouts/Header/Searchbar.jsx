@@ -8,7 +8,7 @@ const Searchbar = () => {
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         if(keyword.trim()){
             navigate(`/products/${keyword}`)
         } else {

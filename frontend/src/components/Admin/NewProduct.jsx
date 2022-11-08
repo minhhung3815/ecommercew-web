@@ -99,7 +99,7 @@ const NewProduct = () => {
     }
 
     const newProductSubmitHandler = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         // required field checks
         if (highlights.length <= 0) {

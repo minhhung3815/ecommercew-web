@@ -19,9 +19,7 @@ const ReviewsTable = () => {
     const { loading, isDeleted, error: deleteError } = useSelector((state) => state.review);
 
     useEffect(() => {
-        if (productId.length === 24) {
             dispatch(getAllReviews(productId));
-        }
         if (error) {
             enqueueSnackbar(error, { variant: "error" });
             dispatch(clearErrors());

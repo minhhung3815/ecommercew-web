@@ -20,7 +20,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
 
     const handleLogin = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         dispatch(loginUser(email, password));
     }
 

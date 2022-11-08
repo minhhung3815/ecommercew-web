@@ -22,7 +22,7 @@ const UpdatePassword = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
 
     const updatePasswordSubmitHandler = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         if (newPassword.length < 8) {
             enqueueSnackbar("Password length must be atleast 8 characters", { variant: "warning" });

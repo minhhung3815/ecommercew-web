@@ -33,7 +33,7 @@ const UpdateUser = () => {
     const userId = params.id;
 
     const updateUserSubmitHandler = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         const formData = new FormData();
         formData.set("name", name);

@@ -86,10 +86,10 @@ const UserTable = () => {
         },
         {
             field: "registeredOn",
-            headerName: "Registered On",
+            headerName: "Created At",
             type: "date",
             minWidth: 150,
-            flex: 0.2,
+            flex: 0.7,
         },
         {
             field: "actions",
@@ -116,7 +116,7 @@ const UserTable = () => {
             email: item.email,
             gender: item.gender.toUpperCase(),
             role: item.role,
-            registeredOn: new Date(item.createdAt).toISOString().substring(0, 10),
+            registeredOn: new Date(item.createdAt).toLocaleString('en-US'),
         });
     });
 
@@ -127,8 +127,7 @@ const UserTable = () => {
             {loading && <BackdropLoader />}
 
             <h1 className="text-lg font-medium uppercase">users</h1>
-            <div className="bg-white rounded-xl shadow-lg w-full" style={{ height: 470 }}>
-
+            <div className="bg-white rounded-xl shadow-lg w-full" style={{ height: 470, width: "100%" }}>
                 <DataGrid
                     rows={rows}
                     columns={columns}
