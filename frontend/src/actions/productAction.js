@@ -120,7 +120,6 @@ export const getSliderProducts = () => async (dispatch) => {
         dispatch({ type: SLIDER_PRODUCTS_REQUEST });
 
         const { data } = await axios.get('/api/v1/products/all');
-        console.log(data)
         dispatch({
             type: SLIDER_PRODUCTS_SUCCESS,
             payload: data.products,

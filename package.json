@@ -1,11 +1,11 @@
 {
-  "name": "flipkart",
+  "name": "ecommerce-web",
   "version": "1.0.0",
   "engines": {
     "node": "v16.14.0",
     "npm": "8.1.3"
   },
-  "description": "Full Stack Flipkart Ecommerce",
+  "description": "Ecommerce",
   "main": "backend/server.js",
   "scripts": {
     "dev": "nodemon backend/server.js",

@@ -14,6 +14,7 @@ import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import CachedIcon from '@mui/icons-material/Cached';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -188,8 +189,8 @@ const ProductDetails = () => {
                                     {/* <!-- price desc --> */}
                                     <span className="text-primary-green text-sm font-medium">Special Price</span>
                                     <div className="flex items-baseline gap-2 text-3xl font-medium">
-                                        <span className="text-gray-800">₹{product.price?.toLocaleString()}</span>
-                                        <span className="text-base text-gray-500 line-through">₹{product.cuttedPrice?.toLocaleString()}</span>
+                                        <span className="text-gray-800">${product.price?.toLocaleString()}</span>
+                                        <span className="text-base text-gray-500 line-through">${product.cuttedPrice?.toLocaleString()}</span>
                                         <span className="text-base text-primary-green">{getDiscount(product.price, product.cuttedPrice)}%&nbsp;off</span>
                                     </div>
                                     {product.stock <= 10 && product.stock > 0 && (
@@ -199,18 +200,13 @@ const ProductDetails = () => {
 
                                     {/* <!-- banks offers --> */}
                                     <p className="text-md font-medium">Available offers</p>
-                                    {Array(3).fill("").map((el, i) => (
-                                        <p className="text-sm flex items-center gap-1" key={i}>
-                                            <span className="text-primary-lightGreen"><LocalOfferIcon sx={{ fontSize: "20px" }} /></span>
-                                            <span className="font-medium ml-2">Bank Offer</span> 15% Instant discount on first Flipkart Pay Later order of 500 and above <Link className="text-primary-blue font-medium" to="/">T&C</Link>
-                                        </p>
-                                    ))}
+                                    
                                     {/* <!-- banks offers --> */}
 
                                     {/* <!-- warranty & brand --> */}
                                     <div className="flex gap-8 mt-2 items-center text-sm">
                                         <img draggable="false" className="w-20 h-8 p-0.5 border object-contain" src={product.brand?.logo.url} alt={product.brand && product.brand.name} />
-                                        <span>{product.warranty} Year Warranty <Link className="font-medium text-primary-blue" to="/">Know More</Link></span>
+                                        <span>{product.warranty} Year Warranty <Link className="font-medium text-primary-blue">Know More</Link></span>
                                     </div>
                                     {/* <!-- warranty & brand --> */}
 
@@ -248,7 +244,7 @@ const ProductDetails = () => {
                                                     <p className="flex items-center gap-3"><span className="text-primary-blue"><CachedIcon sx={{ fontSize: "18px" }} /></span> 7 Days Replacement Policy</p>
                                                 </li>
                                                 <li>
-                                                    <p className="flex items-center gap-3"><span className="text-primary-blue"><CurrencyRupeeIcon sx={{ fontSize: "18px" }} /></span> Cash on Delivery available</p>
+                                                    <p className="flex items-center gap-3"><span className="text-primary-blue"><AttachMoneyIcon sx={{ fontSize: "18px" }} /></span> Cash on Delivery available</p>
                                                 </li>
                                             </ul>
                                         </div>

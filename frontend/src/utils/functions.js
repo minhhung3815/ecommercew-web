@@ -4,12 +4,12 @@ export const getDiscount = (price, cuttedPrice) => {
 
 export const getDeliveryDate = () => {
     const deliveryDate = new Date();
-    deliveryDate.setDate(new Date().getDate() + 7)
-    return deliveryDate.toUTCString().substring(0, 11);
+    deliveryDate.setDate(new Date().getDate() + 3)
+    return deliveryDate.toDateString().substring(0, 11);
 }
 
 export const formatDate = (dt) => {
-    return new Date(dt).toUTCString().substring(0,16);
+    return new Date(dt).toDateString().substring(0,16);
 }
 
 export const getRandomProducts = (prodsArray, n) => {
