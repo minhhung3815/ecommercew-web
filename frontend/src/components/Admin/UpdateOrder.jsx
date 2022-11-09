@@ -40,7 +40,7 @@ const UpdateOrder = () => {
     }, [dispatch, error, params.id, isUpdated, updateError, enqueueSnackbar]);
 
     const updateOrderSubmitHandler = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         const formData = new FormData();
         formData.set("status", status);
         dispatch(updateOrder(params.id, formData));

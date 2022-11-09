@@ -33,7 +33,7 @@ const UpdateUser = () => {
     const userId = params.id;
 
     const updateUserSubmitHandler = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
 
         const formData = new FormData();
         formData.set("name", name);
@@ -45,6 +45,7 @@ const UpdateUser = () => {
     }
 
     useEffect(() => {
+        console.log("ISUPDATE: ", isUpdated, updateError, updateLoading)
         if (user && user._id !== userId) {
             dispatch(getUserDetails(userId));
         } else {

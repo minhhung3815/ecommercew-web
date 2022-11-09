@@ -50,7 +50,6 @@ exports.loginUser = asyncErrorHandler(async (req, res, next) => {
     if(!isPasswordMatched) {
         return next(new ErrorHandler("Invalid Email or Password", 401));
     }
-
     sendToken(user, 201, res);
 });
 
@@ -66,6 +65,33 @@ exports.logoutUser = asyncErrorHandler(async (req, res, next) => {
         message: "Logged Out",
     });
 });
+
+// Add User
+exports.addNewUser = asyncErrorHandler(async (req, res, next) => {
+    const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+        folder: "avatars",
+        width: 150,
+        crop: "scale",
+    });
+    const { name, email, gender, password, role } = req.body;
+
+    const user = await User.create({
+        name, 
+        email,
+        gender,
+        password,
+        role,
+        avatar: {
+            public_id: myCloud.public_id,
+            url: myCloud.secure_url,
+        },
+    });
+
+    res.status(201).json({
+        success: true,
+        user
+    })
+})
 
 // Get User Details
 exports.getUserDetails = asyncErrorHandler(async (req, res, next) => {

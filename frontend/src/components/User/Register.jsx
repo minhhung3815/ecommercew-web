@@ -34,13 +34,13 @@ const Register = () => {
     const [avatarPreview, setAvatarPreview] = useState("preview.png");
 
     const handleRegister = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         if (password.length < 8) {
-            enqueueSnackbar("Password length must be atleast 8 characters", { variant: "warning" });
+            enqueueSnackbar("Password length must be at least 8 characters", { variant: "warning" });
             return;
         }
         if (password !== cpassword) {
-            enqueueSnackbar("Password Doesn't Match", { variant: "error" });
+            enqueueSnackbar("Password doesn't match", { variant: "error" });
             return;
         }
         if (!avatar) {
@@ -56,8 +56,6 @@ const Register = () => {
         formData.set("avatar", avatar);
 
         dispatch(registerUser(formData));
-
-        navigate('/login')
     }
 
     const handleDataChange = (e) => {

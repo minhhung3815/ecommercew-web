@@ -47,7 +47,7 @@ const Payment = () => {
     // }
 
     const submitHandler = async (e) => {
-        // e.preventDefault();
+        e.preventDefault();
 
         // paymentBtn.current.disabled = true;
         setPayDisable(false);

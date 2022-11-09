@@ -86,7 +86,7 @@ const MyOrders = () => {
     }, [status, orderTime]);
 
     const searchOrders = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         if (!search.trim()) {
             enqueueSnackbar("Empty Input", { variant: "warning" });
             return;

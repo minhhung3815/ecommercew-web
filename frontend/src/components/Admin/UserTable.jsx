@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSnackbar } from 'notistack';
 import { clearErrors, deleteUser, getAllUsers } from '../../actions/userAction';
@@ -125,8 +126,11 @@ const UserTable = () => {
             <MetaData title="Admin Users | Flipkart" />
 
             {loading && <BackdropLoader />}
-
-            <h1 className="text-lg font-medium uppercase">users</h1>
+            
+            <div className="flex justify-between items-center">
+                <h1 className="text-lg font-medium uppercase">users</h1>
+                <Link to="/admin/new_user" className="py-2 px-4 rounded shadow font-medium text-white bg-primary-blue hover:shadow-lg">New User</Link>
+            </div>
             <div className="bg-white rounded-xl shadow-lg w-full" style={{ height: 470, width: "100%" }}>
                 <DataGrid
                     rows={rows}

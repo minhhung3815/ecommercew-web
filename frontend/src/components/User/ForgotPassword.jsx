@@ -18,7 +18,7 @@ const ForgotPassword = () => {
     const [email, setEmail] = useState("");
 
     const handleSubmit = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         const formData = new FormData();
         formData.set("email", email);
         dispatch(forgotPassword(formData));

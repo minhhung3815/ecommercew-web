@@ -25,7 +25,7 @@ const UpdateProfile = () => {
     const [avatarPreview, setAvatarPreview] = useState("");
 
     const updateProfileHandler = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
 
         const formData = new FormData();
         formData.set("name", name);
