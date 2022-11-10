@@ -6,14 +6,13 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import { useSnackbar } from "notistack";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser, clearErrors, registerUser } from "../../actions/userAction";
+import { addUser, clearErrors } from "../../actions/userAction";
 import BackdropLoader from "../Layouts/BackdropLoader";
 import MetaData from "../Layouts/MetaData";
 import {
   UPDATE_USER_RESET,
-  REMOVE_USER_DETAILS,
 } from "../../constants/userConstants";
 
 const NewUser = () => {
@@ -31,6 +30,19 @@ const NewUser = () => {
   const [gender, setGender] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCPassword] = useState("");
+
+  const handleDataChange = (e) => {
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        setAvatarPreview(reader.result);
+        setAvatar(reader.result);
+      }
+    };
+
+    reader.readAsDataURL(e.target.files[0]);
+  };
 
   const handleAddUser = (e) => {
     e.preventDefault();
@@ -61,21 +73,9 @@ const NewUser = () => {
     dispatch(addUser(formData));
   };
 
-  const handleDataChange = (e) => {
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      if (reader.readyState === 2) {
-        setAvatarPreview(reader.result);
-        setAvatar(reader.result);
-      }
-    };
-
-    reader.readAsDataURL(e.target.files[0]);
-  };
+  
 
   useEffect(() => {
-    console.log('SUCCESS: ', success, loading)
     if (error) {
       enqueueSnackbar(error, { variant: "error" });
       dispatch(clearErrors());
@@ -83,7 +83,6 @@ const NewUser = () => {
     if (success) {
       enqueueSnackbar("Add New User Successfully", { variant: "success" });
       dispatch({ type: UPDATE_USER_RESET });
-      console.log('abcdef')
       navigate("/admin/users");
     }
   }, [dispatch, error, success, navigate, enqueueSnackbar]);

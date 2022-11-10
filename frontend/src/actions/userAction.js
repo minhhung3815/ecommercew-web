@@ -105,7 +105,6 @@ export const addUser = (userData) => async (dispatch) => {
     };
 
     const { data } = await axios.post("/api/v1/admin/users", userData, config);
-    console.log("SUCCESS: ",data.success)
     dispatch({
       type: ADD_USER_SUCCESS,
       payload: data,
