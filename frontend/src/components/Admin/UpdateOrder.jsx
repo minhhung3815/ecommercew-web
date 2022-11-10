@@ -61,7 +61,7 @@ const UpdateOrder = () => {
                                     <div className="flex flex-col gap-3 my-8 mx-10">
                                         <h3 className="font-medium text-lg">Delivery Address</h3>
                                         <h4 className="font-medium">{order.user.name}</h4>
-                                        <p className="text-sm">{`${order.shippingInfo.address}, ${order.shippingInfo.city}, ${order.shippingInfo.state} - ${order.shippingInfo.pincode}`}</p>
+                                        <p className="text-sm">{`${order.shippingInfo.address}, ${order.shippingInfo.ward}, ${order.shippingInfo.district}, ${order.shippingInfo.city}`}</p>
                                         <div className="flex gap-2 text-sm">
                                             <p className="font-medium">Email</p>
                                             <p>{order.user.email}</p>

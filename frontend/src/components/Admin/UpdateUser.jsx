@@ -45,7 +45,6 @@ const UpdateUser = () => {
     }
 
     useEffect(() => {
-        console.log("ISUPDATE: ", isUpdated, updateError, updateLoading)
         if (user && user._id !== userId) {
             dispatch(getUserDetails(userId));
         } else {

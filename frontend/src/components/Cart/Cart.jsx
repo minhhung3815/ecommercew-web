@@ -9,7 +9,7 @@ import SaveForLaterItem from './SaveForLaterItem';
 const Cart = () => {
 
     const navigate = useNavigate();
-    const { cartItems } = useSelector((state) => state.cart);
+    const { cartItems, shippingInfo } = useSelector((state) => state.cart);
     const { saveForLaterItems } = useSelector((state) => state.saveForLater);
 
     const placeOrderHandler = () => {
@@ -62,7 +62,7 @@ const Cart = () => {
                     </div>
                     {/* <!-- cart column --> */}
 
-                    <PriceSidebar cartItems={cartItems} />
+                    <PriceSidebar cartItems={cartItems} shippingInfo={shippingInfo}/>
 
                 </div>
                 {/* <!-- row --> */}
