@@ -207,18 +207,18 @@ exports.deleteProduct = asyncErrorHandler(async (req, res, next) => {
 exports.createProductReview = asyncErrorHandler(async (req, res, next) => {
   const { rating, comment, productId } = req.body;
 
-  const review = {
-    user: req.user._id,
-    name: req.user.name,
-    rating: Number(rating),
-    comment,
-  };
-
   const product = await Product.findById(productId);
 
   if (!product) {
     return next(new ErrorHandler("Product Not Found", 404));
   }
+  const review = {
+    user: req.user._id,
+    name: req.user.name,
+    rating: Number(rating),
+    comment,
+    productId
+  };
 
   const isReviewed = product.reviews.find(
     (review) => review.user.toString() === req.user._id.toString()
@@ -252,12 +252,12 @@ exports.createProductReview = asyncErrorHandler(async (req, res, next) => {
 // Get All Reviews of Product
 exports.getProductReviews = asyncErrorHandler(async (req, res, next) => {
   const product = await Product.find();
-  let reviews = []
+  let reviews = [];
   if (!product) {
     return next(new ErrorHandler("Product Not Found", 404));
   }
   for (let i = 0; i < product.length; i++) {
-    reviews.push(product[i].reviews)
+    reviews.push(product[i].reviews);
   }
   res.status(200).json({
     success: true,
@@ -268,7 +268,6 @@ exports.getProductReviews = asyncErrorHandler(async (req, res, next) => {
 // Delete Reveiws
 exports.deleteReview = asyncErrorHandler(async (req, res, next) => {
   const product = await Product.findById(req.query.productId);
-
   if (!product) {
     return next(new ErrorHandler("Product Not Found", 404));
   }

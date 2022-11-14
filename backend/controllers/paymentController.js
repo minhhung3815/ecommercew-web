@@ -17,79 +17,10 @@ paypal.configure({
 
 // Process Payment
 exports.processPayment = asyncErrorHandler(async (req, res, next) => {
-  const { amount, email, phoneNo } = req.body;
-  const create_payment_json = {
-    intent: "sale",
-    payer: {
-      payment_method: "paypal",
-    },
-    redirect_urls: {
-      return_url: "http://127.0.0.1:3000/success",
-      cancel_url: "http://127.0.0.1:3000/cancel",
-    },
-    transactions: [
-      {
-        item_list: {
-          items: [
-            {
-              name: "Iphone",
-              sku: "001",
-              price: "1.00",
-              currency: "USD",
-              quantity: 2,
-            },
-          ],
-        },
-        amount: {
-          currency: "USD",
-          total: "2.00",
-        },
-        description: "This is the payment description.",
-      },
-    ],
-  };
-  paypal.payment.create(create_payment_json, function (error, payment) {
-    if (error) {
-      throw error;
-    } else {
-      for (let i = 0; i < payment.links.length; i++) {
-        if (payment.links[i].rel === "approval_url") {
-          res.redirect(payment.links[i].href);
-        }
-      }
-    }
+  console.log(req.payment)
+  res.status(200).json({
+    success: true,
   });
-  //   /* initialize an array */
-  //   params["MID"] = process.env.PAYTM_MID;
-  //   params["WEBSITE"] = process.env.PAYTM_WEBSITE;
-  //   params["CHANNEL_ID"] = process.env.PAYTM_CHANNEL_ID;
-  //   params["INDUSTRY_TYPE_ID"] = process.env.PAYTM_INDUSTRY_TYPE;
-  //   params["ORDER_ID"] = "oid" + uuidv4();
-  //   params["CUST_ID"] = process.env.PAYTM_CUST_ID;
-  //   params["TXN_AMOUNT"] = JSON.stringify(amount);
-  //   // params["CALLBACK_URL"] = `${req.protocol}://${req.get("host")}/api/v1/callback`;
-  //   params["CALLBACK_URL"] = `https://${req.get("host")}/api/v1/callback`;
-  //   params["EMAIL"] = email;
-  //   params["MOBILE_NO"] = phoneNo;
-
-  //   let paytmChecksum = paytm.generateSignature(
-  //     params,
-  //     process.env.PAYTM_MERCHANT_KEY
-  //   );
-  //   paytmChecksum
-  //     .then(function (checksum) {
-  //       let paytmParams = {
-  //         ...params,
-  //         CHECKSUMHASH: checksum,
-  //       };
-
-  //       res.status(200).json({
-  //         paytmParams,
-  //       });
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
 });
 
 // Paytm Callback
@@ -186,7 +117,7 @@ exports.getPaymentStatus = asyncErrorHandler(async (req, res, next) => {
     // id: payment.txnId,
     // status: payment.resultInfo.resultStatus,
     id: 2,
-    status: 'success',
+    status: "success",
   };
 
   res.status(200).json({

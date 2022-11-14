@@ -30,7 +30,6 @@ const Shipping = () => {
   const [charges, setCharges] = useState(shippingInfo.charges);
   const setPrice = (method) => {
     const charges = method === "normal" ? 0 : 50;
-    console.log(typeof fee)
     dispatch(
       saveShippingInfo({
         address,
@@ -149,7 +148,6 @@ const Shipping = () => {
                         value={deliverdBy}
                         label="Country"
                         onChange={(e) => {
-                          console.log(e.target.value);
                           setDeliveredBy(e.target.value);
                           e.target.value === "normal"
                             ? setCharges(0)

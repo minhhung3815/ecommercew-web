@@ -7,7 +7,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 
-const Actions = ({ id, deleteHandler, name, editRoute }) => {
+const Actions = ({ id, deleteHandler, name, editRoute, productId }) => {
 
     const [open, setOpen] = useState(false);
 
@@ -41,7 +41,7 @@ const Actions = ({ id, deleteHandler, name, editRoute }) => {
                 </DialogContent>
                 <DialogActions>
                     <button onClick={handleClose} className="py-2 px-6 rounded shadow bg-gray-400 hover:bg-gray-500 text-white">Cancel</button>
-                    <button onClick={() => deleteHandler(id)} className="py-2 px-6 ml-4 rounded bg-red-600 hover:bg-red-700 text-white shadow">Delete</button>
+                    <button onClick={() => deleteHandler(id, productId)} className="py-2 px-6 ml-4 rounded bg-red-600 hover:bg-red-700 text-white shadow">Delete</button>
                 </DialogActions>
             </Dialog>
         </>

@@ -18,8 +18,8 @@ const orderSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    deliverBy: {
-      type: Number,
+    deliverdBy: {
+      type: String,
       required: true,
     },
     phoneNo: {

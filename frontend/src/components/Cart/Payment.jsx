@@ -3,17 +3,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PriceSidebar from "./PriceSidebar";
 import Stepper from "./Stepper";
-import { redirect, useNavigate } from "react-router-dom";
-// import {
-//     CardNumberElement,
-//     CardCvcElement,
-//     CardExpiryElement,
-//     useStripe,
-//     useElements,
-// } from '@stripe/react-stripe-js';
+import PayPal from "./PayPal";
 import { clearErrors } from "../../actions/orderAction";
 import { useSnackbar } from "notistack";
-import { post } from "../../utils/paytmForm";
 import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
@@ -22,16 +14,13 @@ import MetaData from "../Layouts/MetaData";
 
 const Payment = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
-  // const stripe = useStripe();
-  // const elements = useElements();
-  // const paymentBtn = useRef(null);
   const [payDisable, setPayDisable] = useState(false);
 
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
   const { error } = useSelector((state) => state.newOrder);
+  const [checkout, setCheckout] = useState(false);
 
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
@@ -47,6 +36,11 @@ const Payment = () => {
     shippingInfo,
     orderItems: cartItems,
     totalPrice,
+  };
+
+  const paymentInfo = {
+    id: Math.random().toString(36).substr(2),
+    status: "Processing",
   };
 
   const submitHandler = async (e) => {
@@ -73,7 +67,7 @@ const Payment = () => {
       //     params: data.paytmParams
       // }
 
-    //   post(info)
+      // post(info)
 
       // if (!stripe || !elements) return;
 
@@ -139,7 +133,7 @@ const Payment = () => {
             <Stepper activeStep={3}>
               <div className="w-full bg-white">
                 <form
-                  onSubmit={(e) => submitHandler(e)}
+                  // onSubmit={(e) => submitHandler(e)}
                   autoComplete="off"
                   className="flex flex-col justify-start gap-2 w-full mx-8 my-4 overflow-hidden"
                 >
@@ -167,32 +161,21 @@ const Payment = () => {
                     </RadioGroup>
                   </FormControl>
 
-                  <input
-                    type="submit"
-                    value={`Pay $${totalPrice.toLocaleString()}`}
-                    disabled={payDisable ? true : false}
-                    className={`${
-                      payDisable
-                        ? "bg-primary-grey cursor-not-allowed"
-                        : "bg-primary-orange cursor-pointer"
-                    } w-1/2 sm:w-1/4 my-2 py-3 font-medium text-white shadow hover:shadow-lg rounded-sm uppercase outline-none`}
-                  />
+                  {checkout ? (
+                    <PayPal
+                      paymentData={paymentData}
+                      order={order}
+                      paymentInfo={paymentInfo}
+                    />
+                  ) : (
+                    <input
+                      type="submit"
+                      value={`Pay $${totalPrice.toLocaleString()}`}
+                      className={`bg-primary-orange cursor-pointer w-1/2 sm:w-1/4 my-2 py-3 font-medium text-white shadow hover:shadow-lg rounded-sm uppercase outline-none`}
+                      onClick={() => setCheckout(true)}
+                    />
+                  )}
                 </form>
-
-                {/* stripe form */}
-                {/* <form onSubmit={(e) => submitHandler(e)} autoComplete="off" className="flex flex-col justify-start gap-3 w-full sm:w-3/4 mx-8 my-4">
-                                <div>
-                                    <CardNumberElement />
-                                </div>
-                                <div>
-                                    <CardExpiryElement />
-                                </div>
-                                <div>
-                                    <CardCvcElement />
-                                </div>
-                                <input ref={paymentBtn} type="submit" value="Pay" className="bg-primary-orange w-full sm:w-1/3 my-2 py-3.5 text-sm font-medium text-white shadow hover:shadow-lg rounded-sm uppercase outline-none cursor-pointer" />
-                            </form> */}
-                {/* stripe form */}
               </div>
             </Stepper>
           </div>

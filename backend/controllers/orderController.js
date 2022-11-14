@@ -6,14 +6,13 @@ const sendEmail = require('../utils/sendEmail');
 
 // Create New Order
 exports.newOrder = asyncErrorHandler(async (req, res, next) => {
-
     const {
         shippingInfo,
         orderItems,
         paymentInfo,
         totalPrice,
     } = req.body;
-
+    console.log(paymentInfo)
     const orderExist = await Order.findOne({ paymentInfo });
 
     if (orderExist) {
@@ -29,17 +28,17 @@ exports.newOrder = asyncErrorHandler(async (req, res, next) => {
         user: req.user._id,
     });
 
-    await sendEmail({
-        email: req.user.email,
-        templateId: process.env.SENDGRID_ORDER_TEMPLATEID,
-        data: {
-            name: req.user.name,
-            shippingInfo,
-            orderItems,
-            totalPrice,
-            oid: order._id,
-        }
-    });
+    // await sendEmail({
+    //     email: req.user.email,
+    //     templateId: process.env.SENDGRID_ORDER_TEMPLATEID,
+    //     data: {
+    //         name: req.user.name,
+    //         shippingInfo,
+    //         orderItems,
+    //         totalPrice,
+    //         oid: order._id,
+    //     }
+    // });
 
     res.status(201).json({
         success: true,

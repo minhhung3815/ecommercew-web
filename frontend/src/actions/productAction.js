@@ -208,11 +208,11 @@ export const deleteProduct = (id) => async (dispatch) => {
 }
 
 // Get Product Reviews ---ADMIN
-export const getAllReviews = (id) => async (dispatch) => {
+export const getAllReviews = () => async (dispatch) => {
     try {
         dispatch({ type: ALL_REVIEWS_REQUEST });
         const { data } = await axios.get(`/api/v1/admin/reviews`);
-        
+        console.log('DATA: ', data)
         dispatch({
             type: ALL_REVIEWS_SUCCESS,
             payload: data.reviews,
@@ -228,6 +228,7 @@ export const getAllReviews = (id) => async (dispatch) => {
 // Delete Product Review ---ADMIN
 export const deleteReview = (reviewId, productId) => async (dispatch) => {
     try {
+        console.log(reviewId, "+", productId)
         dispatch({ type: DELETE_REVIEW_REQUEST });
         const { data } = await axios.delete(`/api/v1/admin/reviews?id=${reviewId}&productId=${productId}`);
 

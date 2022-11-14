@@ -101,6 +101,11 @@ const productSchema = new mongoose.Schema({
                 type: Number,
                 required: true
             },
+            productId: {
+                type: mongoose.Schema.ObjectId,
+                ref: "Product",
+                required: true
+            },
             comment: {
                 type: String,
                 required: true
