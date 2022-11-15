@@ -8,6 +8,8 @@ import Actions from './Actions';
 import { formatDate } from '../../utils/functions';
 import MetaData from '../Layouts/MetaData';
 import BackdropLoader from '../Layouts/BackdropLoader';
+import BoltIcon from '@mui/icons-material/Bolt';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 
 const OrderTable = () => {
 
@@ -41,7 +43,7 @@ const OrderTable = () => {
         {
             field: "id",
             headerName: "Order ID",
-            minWidth: 200,
+            minWidth: 120,
             flex: 1,
         },
         {
@@ -76,12 +78,30 @@ const OrderTable = () => {
             field: "amount",
             headerName: "Amount",
             type: "number",
-            minWidth: 200,
+            minWidth: 100,
             flex: 0.2,
             renderCell: (params) => {
                 return (
                     <span>${params.row.amount.toLocaleString()}</span>
                 );
+            },
+        },
+        {
+            field: "deliveredBy",
+            headerName: "Delivered By",
+            type: "string",
+            minWidth: 200,
+            flex: 0.5,
+            renderCell: (params) => {
+                return (
+                    <>
+                        {
+                            params.row.deliveredBy === "fast" ? (
+                                <span className="text-sm bg-yellow-100 p-1 px-2 font-medium rounded-full text-yellow-800"> <BoltIcon/> Fast delivery</span>
+                            ) : <span className="text-sm bg-blue-100 p-1 px-2 font-medium rounded-full text-blue-800"><LocalShippingIcon/> Normal delivery</span>
+                        }
+                    </>
+                )
             },
         },
         {
@@ -115,6 +135,7 @@ const OrderTable = () => {
             amount: order.totalPrice,
             orderOn: formatDate(order.createdAt),
             status: order.orderStatus,
+            deliveredBy: order.shippingInfo.deliverdBy,
         });
     });
 
@@ -125,7 +146,7 @@ const OrderTable = () => {
             {loading && <BackdropLoader />}
 
             <h1 className="text-lg font-medium uppercase">orders</h1>
-            <div className="bg-white rounded-xl shadow-lg w-full" style={{ height: 470 }}>
+            <div className="bg-white rounded-xl shadow-lg w-full" style={{ height: 500 }}>
 
                 <DataGrid
                     rows={rows}

@@ -48,7 +48,7 @@ const PayPal = ({ paymentData, order, paymentInfo }) => {
             config
           );
           dispatch(emptyCart());
-          navigate("/");
+          navigate("/orders");
         },
         onError: (err) => {
           enqueueSnackbar("Payment proccess is failed", { variant: "error" });

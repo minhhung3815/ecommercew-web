@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-import { getRandomProducts } from '../../../utils/functions';
+import { getRandomProducts, getProductsCategory } from '../../../utils/functions';
 import { settings } from '../DealSlider/DealSlider';
 import Product from './Product';
 
@@ -22,7 +22,7 @@ const ProductSlider = ({ title, tagline }) => {
             <hr />
             {loading ? null :
                 <Slider {...settings} className="flex items-center justify-between p-1">
-                    {products && getRandomProducts(products, 12).map((product) => (
+                    {products && getProductsCategory(products, title).map((product) => (
                         <Product {...product} key={product._id} />
                     ))}
                 </Slider>

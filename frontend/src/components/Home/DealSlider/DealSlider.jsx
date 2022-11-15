@@ -13,7 +13,7 @@ export const settings = {
     slidesToScroll: 6,
     initialSlide: 1,
     autoplay: true,
-    autoplaySpeed: 20000,
+    autoplaySpeed: 5000,
     swipe: true,
     prevArrow: <PreviousBtn />,
     nextArrow: <NextBtn />,

@@ -12,7 +12,7 @@ exports.newOrder = asyncErrorHandler(async (req, res, next) => {
         paymentInfo,
         totalPrice,
     } = req.body;
-    console.log(paymentInfo)
+    const date = new Date();
     const orderExist = await Order.findOne({ paymentInfo });
 
     if (orderExist) {
@@ -24,8 +24,9 @@ exports.newOrder = asyncErrorHandler(async (req, res, next) => {
         orderItems,
         paymentInfo,
         totalPrice,
-        paidAt: Date.now(),
+        paidAt: new Date(date.getFullYear(), date.getMonth() - 8, 1),
         user: req.user._id,
+        createdAt: new Date(date.getFullYear(), date.getMonth() - 8, 1),
     });
 
     // await sendEmail({

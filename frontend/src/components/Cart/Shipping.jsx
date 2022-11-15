@@ -29,7 +29,7 @@ const Shipping = () => {
   const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
   const [charges, setCharges] = useState(shippingInfo.charges);
   const setPrice = (method) => {
-    const charges = method === "normal" ? 0 : 50;
+    const charges = method === "normal" ? 0 : 10;
     dispatch(
       saveShippingInfo({
         address,
@@ -151,7 +151,7 @@ const Shipping = () => {
                           setDeliveredBy(e.target.value);
                           e.target.value === "normal"
                             ? setCharges(0)
-                            : setCharges(50);
+                            : setCharges(10);
                           setPrice(e.target.value);
                         }}
                         // onClick={() => {
@@ -163,10 +163,11 @@ const Shipping = () => {
                       </Select>
                     </FormControl>
                     <TextField
-                      value={deliverdBy === "normal" ? 0 : 50}
+                      value={deliverdBy === "normal" ? 0 : 10}
                       label="Delivery Charges"
                       fullWidth
                       variant="outlined"
+                      disabled
                       required
                     />
                   </div>

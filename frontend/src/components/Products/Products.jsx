@@ -27,7 +27,7 @@ const Products = () => {
     const params = useParams();
     const location = useLocation();
 
-    const [price, setPrice] = useState([0, 200000]);
+    const [price, setPrice] = useState([0, 10000]);
     const [category, setCategory] = useState(location.search ? location.search.split("=")[1] : "");
     const [ratings, setRatings] = useState(0);
 
@@ -46,7 +46,7 @@ const Products = () => {
     }
 
     const clearFilters = () => {
-        setPrice([0, 200000]);
+        setPrice([0, 10000]);
         setCategory("");
         setRatings(0);
     }
@@ -93,7 +93,7 @@ const Products = () => {
                                         valueLabelDisplay="auto"
                                         getAriaLabel={() => 'Price range slider'}
                                         min={0}
-                                        max={200000}
+                                        max={10000}
                                     />
 
                                     <div className="flex gap-3 items-center justify-between mb-2 min-w-full">

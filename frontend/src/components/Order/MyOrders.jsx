@@ -206,11 +206,11 @@ const MyOrders = () => {
 
                                 {orders && filteredOrders.map((order) => {
 
-                                    const { _id, orderStatus, orderItems, createdAt, deliveredAt } = order;
+                                    const { _id, orderStatus, orderItems, createdAt, deliveredAt, shippingInfo } = order;
 
                                     return (
                                         orderItems.map((item, index) => (
-                                            <OrderItem {...item} key={index} orderId={_id} orderStatus={orderStatus} createdAt={createdAt} deliveredAt={deliveredAt} />
+                                            <OrderItem {...item} key={index} orderId={_id} orderStatus={orderStatus} createdAt={createdAt} deliveredAt={deliveredAt} deliveredBy={shippingInfo.deliverdBy}/>
                                         ))
                                     )
                                 }).reverse()}
