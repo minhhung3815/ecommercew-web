@@ -62,15 +62,7 @@ let initialState = {
       : [],
     shippingInfo: localStorage.getItem("shippingInfo")
       ? JSON.parse(localStorage.getItem("shippingInfo"))
-      : {
-          address: "N/A",
-          ward: "N/A",
-          district: "N/A",
-          city: "N/A",
-          deliverBy: "normal",
-          phoneNo: "N/A",
-          charges: 0,
-        },
+      : {},
   },
   saveForLater: {
     saveForLaterItems: localStorage.getItem("saveForLaterItems")

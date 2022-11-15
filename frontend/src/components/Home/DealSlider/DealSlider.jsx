@@ -7,12 +7,14 @@ import { getRandomProducts } from '../../../utils/functions';
 
 export const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 6,
     initialSlide: 1,
-    swipe: false,
+    autoplay: true,
+    autoplaySpeed: 20000,
+    swipe: true,
     prevArrow: <PreviousBtn />,
     nextArrow: <NextBtn />,
     responsive: [
