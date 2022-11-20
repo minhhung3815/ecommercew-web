@@ -123,7 +123,7 @@ const Payment = () => {
 
   return (
     <>
-      <MetaData title="Flipkart: Secure Payment | PayPal" />
+      <MetaData title="Secure Payment | PayPal" />
 
       <main className="w-full mt-20">
         {/* <!-- row --> */}

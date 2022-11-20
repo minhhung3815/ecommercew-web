@@ -1,148 +1,52 @@
 const states = [
     {
-      "code": "AN",
-      "name": "Andaman and Nicobar Islands"
+      "code": "DN",
+      "name": "Đà Nẵng"
     },
     {
-      "code": "AP",
-      "name": "Andhra Pradesh"
+      "code": "HCM",
+      "name": "Hồ Chí Minh"
     },
     {
-      "code": "AR",
-      "name": "Arunachal Pradesh"
+      "code": "HN",
+      "name": "Hà Nội"
     },
     {
-      "code": "AS",
-      "name": "Assam"
+      "code": "QN",
+      "name": "Quảng Ninh"
     },
     {
-      "code": "BR",
-      "name": "Bihar"
+      "code": "TH",
+      "name": "Thanh Hóa"
     },
     {
-      "code": "CG",
-      "name": "Chandigarh"
-    },
-    {
-      "code": "CH",
-      "name": "Chhattisgarh"
-    },
-    {
-      "code": "DH",
-      "name": "Dadra and Nagar Haveli"
-    },
-    {
-      "code": "DD",
-      "name": "Daman and Diu"
+      "code": "LC",
+      "name": "Lai Châu"
     },
     {
       "code": "DL",
-      "name": "Delhi"
+      "name": "Đắk Lắk"
     },
     {
-      "code": "GA",
-      "name": "Goa"
+      "code": "GL",
+      "name": "Gia Lai"
     },
     {
-      "code": "GJ",
-      "name": "Gujarat"
+      "code": "HU",
+      "name": "Huế"
     },
     {
-      "code": "HR",
-      "name": "Haryana"
+      "code": "NT",
+      "name": "Nha Trang"
     },
     {
-      "code": "HP",
-      "name": "Himachal Pradesh"
+      "code": "TB",
+      "name": "Thái Bình"
     },
     {
-      "code": "JK",
-      "name": "Jammu and Kashmir"
+      "code": "CM",
+      "name": "Cà Mau"
     },
-    {
-      "code": "JH",
-      "name": "Jharkhand"
-    },
-    {
-      "code": "KA",
-      "name": "Karnataka"
-    },
-    {
-      "code": "KL",
-      "name": "Kerala"
-    },
-    {
-      "code": "LD",
-      "name": "Lakshadweep"
-    },
-    {
-      "code": "MP",
-      "name": "Madhya Pradesh"
-    },
-    {
-      "code": "MH",
-      "name": "Maharashtra"
-    },
-    {
-      "code": "MN",
-      "name": "Manipur"
-    },
-    {
-      "code": "ML",
-      "name": "Meghalaya"
-    },
-    {
-      "code": "MZ",
-      "name": "Mizoram"
-    },
-    {
-      "code": "NL",
-      "name": "Nagaland"
-    },
-    {
-      "code": "OR",
-      "name": "Odisha"
-    },
-    {
-      "code": "PY",
-      "name": "Puducherry"
-    },
-    {
-      "code": "PB",
-      "name": "Punjab"
-    },
-    {
-      "code": "RJ",
-      "name": "Rajasthan"
-    },
-    {
-      "code": "SK",
-      "name": "Sikkim"
-    },
-    {
-      "code": "TN",
-      "name": "Tamil Nadu"
-    },
-    {
-      "code": "TS",
-      "name": "Telangana"
-    },
-    {
-      "code": "TR",
-      "name": "Tripura"
-    },
-    {
-      "code": "UP",
-      "name": "Uttar Pradesh"
-    },
-    {
-      "code": "UK",
-      "name": "Uttarakhand"
-    },
-    {
-      "code": "WB",
-      "name": "West Bengal"
-    }
   ]
 
 export default states;

@@ -2,7 +2,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Searchbar from './Searchbar';
-import logo from '../../../assets/images/logo.png';
+import logo from '../../../assets/images/logo2-removebg-preview.png';
 import PrimaryDropDownMenu from './PrimaryDropDownMenu';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
 
-    <header className="fixed top-0 py-2.5 w-full z-10" style={{backgroundColor: 'blue'}}>
+    <header className="fixed bg-primary-blue top-0 py-2.5 w-full z-10">
 
       {/* <!-- navbar container --> */}
       <div className="w-full sm:w-9/12 px-1 sm:px-4 m-auto flex justify-between items-center relative">
@@ -26,7 +26,7 @@ const Header = () => {
         {/* <!-- logo & search container --> */}
         <div className="flex items-center flex-1">
           <Link className="h-7 mr-1 sm:mr-4" to="/">
-            <img draggable="false" className="h-full w-full object-contain" src={logo} alt="Flipkart Logo" />
+            <img draggable="false" className="h-10 w-20 object-contain" src={logo} alt=" Logo" />
           </Link>
 
           <Searchbar />

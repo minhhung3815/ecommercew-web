@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { emptyCart } from "../../actions/cartAction";
-import { clearErrors } from "../../actions/orderAction";
 const PayPal = ({ paymentData, order, paymentInfo }) => {
   const payment = { ...paymentData };
   const makeOrder = { ...order, paymentInfo: payment };
@@ -36,7 +35,6 @@ const PayPal = ({ paymentData, order, paymentInfo }) => {
               "Content-Type": "application/json",
             },
           };
-          console.log(makeOrder);
           await axios.post(
             "/api/v1/order/new",
             {

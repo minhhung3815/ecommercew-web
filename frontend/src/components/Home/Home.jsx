@@ -29,10 +29,9 @@ const Home = () => {
       <Categories />
       <main className="flex flex-col gap-3 px-2 mt-16 sm:mt-2">
         <Banner />
-        {!loading && <ProductSlider title={"Mobiles"} tagline={"Based on Your Activity"} />}
-        {!loading && <ProductSlider title={"Gamepads"} tagline={"Based on Your Interest"} />}
-        {!loading && <ProductSlider title={"Laptops"} tagline={"Inspired by your order"} />}
-        {!loading && <ProductSlider title={"Screens"} tagline={"Inspired by your order"} />}
+        {!loading && <ProductSlider title={"Mobiles"} tagline={"Top trending mobiles"} />}
+        {!loading && <ProductSlider title={"Laptops"} tagline={"Top trending laptops"} />}
+        {!loading && <ProductSlider title={"Screens"} tagline={"Top trending screens"} />}
       </main>
     </>
   );

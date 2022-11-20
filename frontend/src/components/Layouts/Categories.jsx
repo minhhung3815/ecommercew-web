@@ -1,12 +1,16 @@
 import mobiles from "../../assets/images/Categories/phone.png";
 import fashion from "../../assets/images/Categories/fashion.png";
-import electronics from "../../assets/images/Categories/electronics.png";
+import electronics from "../../assets/images/Categories/laptop-removebg-preview.png";
 import home from "../../assets/images/Categories/home.png";
 import travel from "../../assets/images/Categories/travel.png";
-import appliances from "../../assets/images/Categories/appliances.png";
-import furniture from "../../assets/images/Categories/furniture.png";
+import appliances from "../../assets/images/Categories/screen.png";
+import furniture from "../../assets/images/Categories/camera.png";
 import beauty from "../../assets/images/Categories/beauty.png";
-import grocery from "../../assets/images/Categories/grocery.png";
+import grocery from "../../assets/images/Categories/gamepad.png";
+import tablet from "../../assets/images/Categories/tablet-removebg-preview.png"
+import headphone from "../../assets/images/Categories/headphone-removebg-preview.png"
+import Apple from "../../assets/images/Categories/Apple.png"
+import charge from "../../assets/images/Categories/charge-removebg-preview.png"
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -17,19 +21,19 @@ const catNav = [
   },
   {
     name: "Tablets",
-    icon: fashion,
+    icon: tablet,
   },
   {
     name: "Headphones",
-    icon: electronics,
+    icon: headphone,
   },
   {
     name: "Apple",
-    icon: home,
+    icon: Apple,
   },
   {
     name: "Accessories",
-    icon: travel,
+    icon: charge,
   },
   {
     name: "Screens",
@@ -41,7 +45,7 @@ const catNav = [
   },
   {
     name: "Laptops",
-    icon: beauty,
+    icon: electronics,
   },
   {
     name: "Gamepads",
