@@ -158,12 +158,12 @@ const Shipping = () => {
                         //   setPrice();
                         // }}
                       >
-                        <MenuItem value={"normal"}>Normal Deliver</MenuItem>
-                        <MenuItem value={"fast"}>Fast Deliver</MenuItem>
+                        <MenuItem value={"normal"}>Standard Express</MenuItem>
+                        <MenuItem value={"fast"}>Fast Express</MenuItem>
                       </Select>
                     </FormControl>
                     <TextField
-                      value={deliverdBy === "normal" ? 0 : 10}
+                      value={deliverdBy === "fast" ? 10 : 0}
                       label="Delivery Charges"
                       fullWidth
                       variant="outlined"

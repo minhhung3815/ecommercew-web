@@ -68,13 +68,6 @@ const OrderTable = () => {
             },
         },
         {
-            field: "itemsQty",
-            headerName: "Items Qty",
-            type: "number",
-            minWidth: 100,
-            flex: 0.1,
-        },
-        {
             field: "amount",
             headerName: "Amount",
             type: "number",
@@ -131,7 +124,6 @@ const OrderTable = () => {
     orders && orders.forEach((order) => {
         rows.unshift({
             id: order._id,
-            itemsQty: order.orderItems.length,
             amount: order.totalPrice,
             orderOn: formatDate(order.createdAt),
             status: order.orderStatus,
