@@ -6,7 +6,7 @@ const Stepper = ({ activeStep, children }) => {
     const { user } = useSelector((state) => state.user);
     const { shippingInfo, cartItems } = useSelector((state) => state.cart);
 
-    const address = `${shippingInfo.address}, ${shippingInfo.ward}, ${shippingInfo.district}, ${shippingInfo.city}`;
+    const address = `${shippingInfo.address}, P.${shippingInfo.ward}, Q.${shippingInfo.district}, ${shippingInfo.city}`;
 
     const steps = [
         {
@@ -14,7 +14,7 @@ const Stepper = ({ activeStep, children }) => {
             desc: <p className="font-medium text-sm">{user.name} <span className="text-sm font-normal">{user.email}</span></p>
         },
         {
-            label: "DELIVERY ADDRESS",
+            label: "DELIVERY OPTIONS",
             desc: <p className="font-medium text-sm">{user.name} <span className="text-sm font-normal">{address}</span></p>
         },
         {

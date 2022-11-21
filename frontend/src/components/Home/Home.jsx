@@ -27,11 +27,11 @@ const Home = () => {
     <>
       <MetaData title="Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!" />
       <Categories />
-      <main className="flex flex-col gap-3 px-2 mt-16 sm:mt-2">
+      <main className="flex flex-col gap-3 px-2 mt-16 sm:mt-2" >
         <Banner />
-        {!loading && <ProductSlider title={"Mobiles"} tagline={"Top trending mobiles"} />}
-        {!loading && <ProductSlider title={"Laptops"} tagline={"Top trending laptops"} />}
-        {!loading && <ProductSlider title={"Screens"} tagline={"Top trending screens"} />}
+        {!loading && <ProductSlider title={"Mobiles"} tagline={"Top trending mobiles"} draggable={true}/>}
+        {!loading && <ProductSlider title={"Laptops"} tagline={"Top trending laptops"} draggable={true}/>}
+        {!loading && <ProductSlider title={"Screens"} tagline={"Top trending screens"} draggable={true}/>}
       </main>
     </>
   );

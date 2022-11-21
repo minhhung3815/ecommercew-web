@@ -1,4 +1,5 @@
 const PriceSidebar = ({ cartItems, shippingInfo }) => {
+  console.log(cartItems, shippingInfo);
   return (
     <div className="flex sticky top-16 sm:h-screen flex-col sm:w-4/12 sm:px-1">
       {/* <!-- nav tiles --> */}
@@ -37,7 +38,7 @@ const PriceSidebar = ({ cartItems, shippingInfo }) => {
           </p>
           <p className="flex justify-between">
             Delivery Charges{" "}
-            <span className="text-primary-green">${shippingInfo.charges}</span>
+            <span className="text-primary-green">${shippingInfo?.charges || "0"}</span>
           </p>
 
           <div className="border border-dashed"></div>
@@ -46,7 +47,10 @@ const PriceSidebar = ({ cartItems, shippingInfo }) => {
             <span>
               $
               {cartItems
-                .reduce((sum, item) => sum + item.price * item.quantity, shippingInfo.charges)
+                .reduce(
+                  (sum, item) => sum + item.price * item.quantity,
+                  shippingInfo?.charges || 0
+                )
                 .toLocaleString()}
             </span>
           </p>
@@ -54,14 +58,12 @@ const PriceSidebar = ({ cartItems, shippingInfo }) => {
 
           <p className="font-medium text-primary-green">
             You will save $
-            {cartItems
-              .reduce(
-                (sum, item) =>
-                  sum +
-                  (item.cuttedPrice * item.quantity -
-                    item.price * item.quantity),
-                    0
-              )}{" "}
+            {cartItems.reduce(
+              (sum, item) =>
+                sum +
+                (item.cuttedPrice * item.quantity - item.price * item.quantity),
+              0
+            )}{" "}
             on this order
           </p>
         </div>

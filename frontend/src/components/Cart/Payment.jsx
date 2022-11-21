@@ -29,6 +29,7 @@ const Payment = () => {
   const paymentData = {
     amount: Math.round(totalPrice),
     email: user.email,
+    name: user.name,
     phoneNo: shippingInfo.phoneNo,
   };
 

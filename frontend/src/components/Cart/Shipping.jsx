@@ -120,7 +120,7 @@ const Shipping = () => {
                         required
                       >
                         {states.map((item) => (
-                          <MenuItem key={item.code} value={item.code}>
+                          <MenuItem key={item.code} value={item.name}>
                             {item.name}
                           </MenuItem>
                         ))}

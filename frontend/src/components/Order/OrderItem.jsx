@@ -46,8 +46,8 @@ const OrderItem = (props) => {
           <p className="text-xs text-gray-500">
             Delivery:{" "}
             {deliveredBy === "normal"
-              ? "Normal Delivery"
-              : "Fast Delivery"}
+              ? "Standard Express"
+              : "Fast Express"}
           </p>
         </div>
 

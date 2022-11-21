@@ -97,8 +97,8 @@ const OrderTable = () => {
                     <>
                         {
                             params.row.deliveredBy === "fast" ? (
-                                <span className="text-sm bg-yellow-100 p-1 px-2 font-medium rounded-full text-yellow-800"> <BoltIcon/> Fast delivery</span>
-                            ) : <span className="text-sm bg-blue-100 p-1 px-2 font-medium rounded-full text-blue-800"><LocalShippingIcon/> Normal delivery</span>
+                                <span className="text-sm bg-yellow-100 p-1 px-2 font-medium rounded-full text-yellow-800"> <BoltIcon/> Fast Express</span>
+                            ) : <span className="text-sm bg-blue-100 p-1 px-2 font-medium rounded-full text-blue-800"><LocalShippingIcon/> Standard Express</span>
                         }
                     </>
                 )

@@ -24,9 +24,9 @@ exports.newOrder = asyncErrorHandler(async (req, res, next) => {
         orderItems,
         paymentInfo,
         totalPrice,
-        paidAt: new Date(date.getFullYear(), date.getMonth() - 8, 1),
+        paidAt: new Date(date.getFullYear(), date.getMonth() - 5, 1),
         user: req.user._id,
-        createdAt: new Date(date.getFullYear(), date.getMonth() - 8, 1),
+        createdAt: new Date(date.getFullYear(), date.getMonth() - 5, 1),
     });
 
     // await sendEmail({
