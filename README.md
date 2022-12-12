@@ -17,7 +17,7 @@ The problem can be described as:
 * Linux, OS X or Windows.
 * NodeJS v16.0.3.
 
-## Installation:
+## Installation
 #### Install Back-end Modules:
 ```bash
 #Install backend modules
