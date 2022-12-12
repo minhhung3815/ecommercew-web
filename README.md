@@ -1,5 +1,5 @@
 # Ecommerce-Web
-E-commerce web application that sells technology products such as smart phones, tablets, laptops, screens and headphones
+E-commerce web application that sells technology products such as smart phones, tablets, laptops, screens and headphones.
 
 ## Summary
 The project contains 3 major modules:
