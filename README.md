@@ -42,7 +42,7 @@ cd frontend
 npm start
 ```
 
-## Web Application
+## Web Application:
 <br/>
 <a href="https://ibb.co/3cf4fqr"><img src="https://i.ibb.co/sq5b5Gm/home.png" alt="img" border="0" width="700" heigth = "700"></a>
 <br/>
