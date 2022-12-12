@@ -7,7 +7,7 @@ The project contains 3 major modules:
 * **Back-end Module**: Using **ExpressJS** framework to build the API to communicate with front-end and implement logical businesses in the web application.
 * **Database Module**: Using **MongoDB** for simple storage.
 
-## Problems:
+## Problems
 The problem can be described as:
 * User goes to the web application to buy his or her desired products.
 * After sign in to the web, user can make order for any products that are available on the web.
@@ -31,7 +31,7 @@ cd frontend
 npm i --save
 ```
 
-## Run Application:
+## Run Application
 #### Run Back-end:
 ````bash
 npm run dev
@@ -42,7 +42,7 @@ cd frontend
 npm start
 ```
 
-## Web Application:
+## Web Application
 <br/>
 <a href="https://ibb.co/3cf4fqr"><img src="https://i.ibb.co/sq5b5Gm/home.png" alt="img" border="0" width="700" heigth = "700"></a>
 <br/>
