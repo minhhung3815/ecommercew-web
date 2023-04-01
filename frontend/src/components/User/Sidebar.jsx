@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import FolderIcon from "@mui/icons-material/Folder";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import PersonIcon from "@mui/icons-material/Person";
-import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+// import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import FolderSharedIcon from "@mui/icons-material/FolderShared";
 import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 import { Link, useNavigate } from "react-router-dom";
@@ -31,7 +31,7 @@ const Sidebar = ({ activeTab }) => {
           <img
             draggable="false"
             className="h-full w-full object-cover rounded-full"
-            src={user.avatar.url}
+            src={user.avatar?.url}
             alt="Avatar"
           />
         </div>

@@ -54,7 +54,7 @@ const UpdateProfile = () => {
             setName(user.name);
             setEmail(user.email);
             setGender(user.gender);
-            setAvatarPreview(user.avatar.url);
+            setAvatarPreview(user.avatar?.url);
         }
         if (error) {
             enqueueSnackbar(error, { variant: "error" });
@@ -136,7 +136,7 @@ const UpdateProfile = () => {
 
                                 <div className="flex flex-col w-full justify-between sm:flex-row gap-3 items-center">
                                     <Avatar
-                                        alt="Avatar Preview"
+                                        alt="Avatar"
                                         src={avatarPreview}
                                         sx={{ width: 56, height: 56 }}
                                     />

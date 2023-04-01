@@ -151,7 +151,7 @@ const Shipping = () => {
                           setDeliveredBy(e.target.value);
                           e.target.value === "normal"
                             ? setCharges(0)
-                            : setCharges(10);
+                            : setCharges(0);
                           setPrice(e.target.value);
                         }}
                         // onClick={() => {
@@ -159,11 +159,10 @@ const Shipping = () => {
                         // }}
                       >
                         <MenuItem value={"normal"}>Standard Express</MenuItem>
-                        <MenuItem value={"fast"}>Fast Express</MenuItem>
                       </Select>
                     </FormControl>
                     <TextField
-                      value={deliverdBy === "fast" ? 10 : 0}
+                      value={deliverdBy === "fast" ? 0 : 0}
                       label="Delivery Charges"
                       fullWidth
                       variant="outlined"

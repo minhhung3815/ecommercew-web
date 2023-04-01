@@ -1,7 +1,7 @@
 import { useSnackbar } from "notistack";
 import axios from "axios";
-import React, { useRef } from "react";
-import { useEffect } from "react";
+import React from "react";
+// import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { emptyCart } from "../../actions/cartAction";
@@ -17,7 +17,7 @@ const PayPal = ({ paymentData, order, paymentInfo }) => {
     <PayPalScriptProvider
       options={{
         "client-id":
-          "AcMTbkZcKG_TMgrYXswBDclEvFQ3gIEooPjjBALWhMys8kfF7HAMyaLzLO7zkOSZggic5CkbO5jzo_c_",
+          "AZPcAtSI443qLBWNtgrtamHYpOqtGmf-ZYcemdAlRolk8Vvk4UKe_fMQlUWX1qDj4TR0dwvsZBf5BZTp",
       }}
     >
       <PayPalButtons

@@ -2,7 +2,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Searchbar from './Searchbar';
-import logo from '../../../assets/images/logo2-removebg-preview.png';
+import logo from '../../../assets/images/logo5.jpg';
 import PrimaryDropDownMenu from './PrimaryDropDownMenu';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
 
-    <header className="fixed bg-primary-blue top-0 py-2.5 w-full z-10">
+    <header className="fixed top-0 py-2.5 w-full z-10" style={{backgroundColor: "#0F2454"}}>
 
       {/* <!-- navbar container --> */}
       <div className="w-full sm:w-9/12 px-1 sm:px-4 m-auto flex justify-between items-center relative">

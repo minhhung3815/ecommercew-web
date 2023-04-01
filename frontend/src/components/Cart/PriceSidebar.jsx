@@ -37,8 +37,8 @@ const PriceSidebar = ({ cartItems, shippingInfo }) => {
             </span>
           </p>
           <p className="flex justify-between">
-            Delivery Charges{" "}
-            <span className="text-primary-green">${shippingInfo?.charges || "0"}</span>
+            Delivery Charges{""}
+            <span className="text-primary-green">FREE</span>
           </p>
 
           <div className="border border-dashed"></div>

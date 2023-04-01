@@ -52,7 +52,7 @@ const UpdateUser = () => {
             setEmail(user.email);
             setGender(user.gender);
             setRole(user.role);
-            setAvatarPreview(user.avatar.url);
+            setAvatarPreview(user.avatar?.url);
         }
         if (error) {
             enqueueSnackbar(error, { variant: "error" });
@@ -127,7 +127,7 @@ const UpdateUser = () => {
 
                                 <div className="flex flex-col w-full justify-between sm:flex-row gap-3 items-center">
                                     <Avatar
-                                        alt="Avatar Preview"
+                                        alt="Avatar"
                                         src={avatarPreview}
                                         sx={{ width: 56, height: 56 }}
                                     />

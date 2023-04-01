@@ -32,6 +32,9 @@ app.use("/api/v1", user);
 app.use("/api/v1", product);
 app.use("/api/v1", order);
 app.use("/api/v1", payment);
+// app.use((req, res, next) => {
+//   return res.status(500).json({ success: false });
+// });
 
 // deployment
 __dirname = path.resolve();

@@ -69,7 +69,7 @@ const UserTable = () => {
         {
             field: "role",
             headerName: "Role",
-            minWidth: 100,
+            minWidth: 60,
             flex: 0.2,
             renderCell: (params) => {
                 return (
@@ -95,7 +95,7 @@ const UserTable = () => {
         {
             field: "actions",
             headerName: "Actions",
-            minWidth: 200,
+            minWidth: 100,
             flex: 0.3,
             type: "number",
             sortable: false,
@@ -113,7 +113,7 @@ const UserTable = () => {
         rows.unshift({
             id: item._id,
             name: item.name,
-            avatar: item.avatar.url,
+            avatar: item.avatar?.url,
             email: item.email,
             gender: item.gender.toUpperCase(),
             role: item.role,
